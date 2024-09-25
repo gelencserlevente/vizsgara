@@ -13,6 +13,22 @@ routing: app-routing.module.ts -> const routes: Routes = [
 
 app.component.html-> törlés kivéve <router-outlet>
 
+
+BOOTSTRAP IMPORTALASA
+Az angular.jsonfájlon belül be kell állítani az elérési útvonalát
+"styles": [ "./node_modules/bootstrap/dist/css/bootstrap.css","src/styles.css" ]
+"scripts": [ "./node_modules/bootstrap/dist/js/bootstrap.js" ]
+
+Kezdőlap routingja path: "kezdolap", component: KezdolapComponent
+
+Alapértelmezett útvonal megadása, ha nem adnánk meg semmit:
+path: "", redirectTo: "/kezdolap", pathMatch: "full"
+
+Hibakezelés, amennyiben a megadott útvonal NEM létezik ("ELSE ÁG") ugorjon a hiba404 aloldalra:
+path: "**", component:Hiba404Component
+
+
+
 DATABINDING
 
 FONTOS: app.module.ts-> imports:[+Formsmodule]	
@@ -100,10 +116,3 @@ function szamolas(){
     document.getElementById("terulet").innerHTML=`a téglalap területe: ${terulet}`
 }
 
-Typescript
-
-function beolvaso():void{
-    let szoveg:string="Szeretem a progit"
-    console.log(szoveg)
-}
-beolvaso()
