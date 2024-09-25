@@ -1,0 +1,101 @@
+/*
+Blur(pixel): 
+Elmosódott effektust alkalmaz a képen. A nagyobb érték több elmosódást eredményez.
+Ha nincs megadva érték, akkor 0 kerül felhasználásra. 
+
+
+Brightness(százalék): 
+Beállítja a kép fényerejét.
+0% esetén a kép teljesen fekete lesz.
+100% (1) az alapértelmezett, és az eredeti képet jelöli.
+A 100% feletti értékek fényesebb eredményeket biztosítanak. 
+
+
+Contrast(százalék):
+Beállítja a kép kontrasztját.
+0% esetén a kép teljesen fekete lesz.
+100% (1) az alapértelmezett, és az eredeti képet jelöli.
+A 100% feletti értékek kontrasztosabb eredményeket biztosítanak. 
+
+
+Drop-shadow(pixel, pixel, pixel, szín)
+Első 2 érték az x és az y irány
+A 3. érték a blur effekt hasonlóan a box vagy a text-shadowhoz
+A 4. érték pedig az elmosódás színe
+
+
+Grayscape(százalék)
+A képet szürkeárnyalatossá alakítja.
+0% (0) az alapértelmezett, és az eredeti képet jelöli.
+A 100% teljesen szürkévé teszi a képet (fekete-fehér képekhez használják). 
+(NEGATÍV érték NEM lehet)
+
+
+Hue-rotate(százalék)
+Színárnyalat-forgatást alkalmaz a képen. Az érték határozza meg a színkör körüli fokok számát, amelyen a képminták módosítva lesznek. 
+A 0deg az alapértelmezett, és az eredeti képet jelöli. 
+
+
+Invert(százalék)
+Megfordítja a mintákat a képen.
+0% (0) az alapértelmezett, és az eredeti képet jelöli.
+100% esetén a kép teljesen fordított lesz. 
+(NEGATÍV érték NEM lehet)
+
+
+Opacity(százalék)
+Beállítja a kép átlátszatlansági szintjét. Az átlátszatlansági szint az átlátszósági szintet írja le, ahol:
+0% teljesen átlátszó.
+100% (1) az alapértelmezett, és az eredeti képet jelöli (nincs átlátszóság) 
+(NEGATÍV érték NEM lehet)
+
+
+Saturate(százalék)
+Beállítja szaturációt
+0% (0) a képet teljesen telítetlenné teszi.
+A 100% az alapértelmezett, és az eredeti képet képviseli.
+A 100% feletti értékek rendkívül telített eredményeket biztosítanak. 
+(NEGATÍV érték NEM lehet)
+
+Sepia(százalék)
+A képet szépia színűvé alakítja.
+0% (0) az alapértelmezett, és az eredeti képet jelöli.
+100% a képet teljesen szépiává teszi. 
+(NEGATÍV érték NEM lehet)
+
+Url(file)
+Megadja a fájlnak az útvonalát
+
+
+
+
+Forrás: 
+https://www.w3schools.com/cssref/css3_pr_filter.asp
+
+Oldal ahol kipróbálhatod az effekteket:
+https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_filter
+
+*/
+img {
+    /*Filterek listája - A kipróbáláshoz tedd idézőjelbe a többit, van hogy összeakadnak*/
+
+    /*
+*/
+    filter: blur(20px);
+    /*
+
+    filter: brightness(200%);
+    filter: contrast(100%);
+    filter: drop-shadow(16px 16px 20px blue);
+
+    filter: grayscale(100%);
+    filter: hue-rotate(200deg);
+
+    filter: invert(100%);
+    filter: opacity(30%);
+
+    filter: saturate(0%);
+    filter: sepia(100%);
+
+*/
+}

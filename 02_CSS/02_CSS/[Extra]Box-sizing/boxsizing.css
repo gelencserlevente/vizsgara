@@ -1,0 +1,16 @@
+/*F12-vel GoogleChrome esetén érdemes megnézni a különböző div elemek méreteit!*/
+
+.contentBoxElem{/*Ez az alapértelmezett érték*/
+    box-sizing:content-box;
+}
+
+.borderBoxElem{/*Width és height tulajdonság esetén "aktivizálódik"*/
+    box-sizing: border-box;
+}
+/*Érdemes minden kód elején használni!
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+*/
