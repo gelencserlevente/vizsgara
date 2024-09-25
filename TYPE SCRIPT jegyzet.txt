@@ -1,0 +1,50 @@
+TYPE SCRIPT jegyzet
+
+ALAP
+
+var szoveg:string="Szeretem a programozást!";
+var szam:number=21;
+var logikai:boolean=true;
+
+FÜGGVÉNY ALAPOK
+
+
+//Függvény(eljárás) visszatérési érték és paraméter nélkül, ÚJ KULCSSZÓ: VOID
+function IloveTypeScript():void{
+    console.log("Szeretem a TypeScriptet!");
+}
+
+//Függvény(eljárás) visszatérési érték nélkül, de paraméteresen
+function NegyzetKerulet(aOldal:number):void{
+    console.log(`A ${aOldal} oldalú négyzet kerülete ${aOldal*4}`);
+}
+
+//Függvény visszatérési értékkel, de paraméter nélkül
+function SzamGenerator():number{
+    return Math.round(Math.random()*100);
+}
+
+//Paraméteres és visszatérési értékes függvény
+function NegyzetTerulet(aOldal:number):number{
+    return aOldal*aOldal;
+}
+
+
+//FÜGGVÉNYEK MEGHÍVÁSA:
+IloveTypeScript();
+NegyzetKerulet(3);
+
+console.log(SzamGenerator());
+
+let eredmeny:number=NegyzetTerulet(6);
+console.log(eredmeny);
+
+
+
+/* HIBAKEZELÉS:
+
+NegyzetKerulet("három"); //HIBÁS mert szám értéket vár bemeneti paraméternek!
+
+fájl WATCH megszüntetése: Ctrl+C
+*/
+

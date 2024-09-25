@@ -1,0 +1,314 @@
+Java Script
+
+
+Melyik a nagyobb
+
+
+let a=Math.round(Math.random()*10);
+let b=Math.round(Math.random()*10);
+if(a>b){
+	document.write(`A ${a},${b} számok közül a ${a} a nagyobb`);
+}
+else if(a<b){
+	document.write(`A ${a},${b} számok közül a ${b} a nagyobb`);
+}
+else{
+	document.write(`A ${a},${b} számok értéke egyenlő`);
+}
+
+Random szám generátor
+
+//Random szám generálás 0-1 valós szám
+let randomSzam=Math.random();
+document.write(randomSzam);
+
+//Random szám generálás 0-100 valós szám
+randomSzam=Math.random()*100;
+document.write("<br>"+randomSzam);
+
+//Random szám generálás 0-100 egész szám
+randomSzam=Math.round(Math.random()*100); 
+//round - alap kerekítési szabály, felfelé és lefelé is kerekít e-szerint
+//floor - lefelé kerekít
+//ceil - felfelé kerekít
+document.write("<br>"+randomSzam);
+
+//Random szám adott intervallumban -50,50
+randomSzam=Math.round(Math.random()*100)-50;//Ezért is utálom a javascript random számokat!
+document.write("<br>"+randomSzam);
+
+
+
+Logikai operátorok
+
+//if(feltétel)  - akkor hajtódott végre a hozzá tartozó utasítás HA IGAZ!
+
+//Arra használjuk a logikai operátorokat, hogy több ilyen feltételt is összekapcsoljunk
+
+
+// && - altgr+c
+//és művelet, AND
+//Akkor hajtódik végre ha az összes összekapcsolt feltétel igaz lesz
+
+// || - altgr+w
+//vagy művelet, OR
+//Akkor hajtódik végre, ha bármelyik összekapcsolt feltétel közül legalább az egyik igaz
+
+// ! - shift+4
+//tagadás művelete, NOT
+//A feltélt csak hamis állapotban hajtja végre
+
+
+//Kódban hogy néz ki?
+//if( szam%2==0 && szam>50)
+//IGAZ: 52, 100, 58, 1565456446
+//HAMIS: 1, 0, 50, 42, 99, 121, 69
+
+Számtani sorozat
+
+let a=Number(prompt("Add meg az a értékét"));
+let b=Number(prompt("Add meg az b értékét"));
+let c=Number(prompt("Add meg az c értékét"));
+/*
+let kul1=b-a;
+let kul2=c-b;
+if(kul1==kul2)
+*/
+if((b-a)==(c-b)){
+	document.write(`A(z) ${a},${b},${c} számsor számtani sorozatot alkot`); 
+}
+else{
+	document.write(`A(z) ${a},${b},${c} számsor NEM alkot számtani sorozatot`); 
+}
+
+Szerkeszthető háromszög
+
+let a=Number(prompt("Add meg az a oldal méretét"));
+let b=Number(prompt("Add meg az b oldal méretét"));
+let c=Number(prompt("Add meg az c oldal méretét"));
+if(a+b>c && a+c>b && b+c>a){
+	document.write(`A ${a}, ${b}, ${c} oldalakkal rendelkező háromszög, szerkeszthető!`);
+}
+else{
+	document.write(`A ${a}, ${b}, ${c} oldalakkal rendelkező háromszög, NEM szerkeszthető!`);
+}
+
+Ciklus alapismeretek
+
+//i++ ==> i=i+1;
+//i+=2 ==> i=i+2;
+//i-- ==> i=i-1;
+//Előrírt lépészámú, számláló cilus (for ciklus)
+for(let i=1;i<=10;i++)
+{
+	document.write(i+",");
+}
+document.write("<hr>");
+//Előltesztelős ciklus(while ciklus)
+let j=1;
+while(j<=10){
+	document.write(j+",");
+    j++;
+}
+
+document.write("<hr>");
+//Hátultesztelős ciklus(do-while ciklus)
+let k=1;
+do{
+	document.write(k+",");
+    k++;
+}while(k<=10)
+
+Számtani sorozat generátor
+
+let elsoElem=Number(prompt("Add meg a sorozat első elemének értékét:"));
+let kulonbseg=Number(prompt("Add meg a sorozat elemei közti különbséget:"));
+let elemSzam=Number(prompt("Add meg hány elemű legyen a sorozat:"));
+document.write("A generált számtani sorozat a következő:<br>");
+for(let i=0;i<elemSzam;i++){
+	document.write(elsoElem+",");
+    elsoElem=elsoElem+kulonbseg;
+}
+
+kettő hatványai
+
+document.write("2 hatványai feladat:");
+for(let i=0;i<=10;i++){
+	let hatvany=2**i;
+    document.write(hatvany+",");
+}
+
+
+document.write("<hr>");
+for(let i=0;i<=10;i++){
+	let hatvany=Math.pow(2,i);
+    document.write(hatvany+",");
+}
+
+
+document.write("<hr>");
+for(let i=1;i<=1024;i*=2){
+document.write(i+",");
+}
+
+Szám osztói
+
+let szam=Number(prompt("Add meg a vizsgálandó számot:"));
+document.write(`A ${szam} osztói:`);
+for(let i=1;i<=szam;i++){
+	if(szam%i==0){
+    	document.write(i+",");
+    }
+}
+
+PROGTÉTELEK
+
+Átlag számítás tétele
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+let osszeg=0;
+for(let i=0;i<tomb.length;i++){
+	osszeg=osszeg+tomb[i];
+}
+document.write("<br>A tömb elemeinek átlaga: "+osszeg/tomb.length);
+
+
+Kiválogatás tétele
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+document.write("A tömbben lévő páros elemek listája: ");
+for(let i=0;i<tomb.length;i++){
+	if(tomb[i]%2==0){
+    	document.write(tomb[i]+",");
+    }
+}
+
+document.write("<hr>");
+document.write("A tömbben lévő páros elemek listája: ");
+document.write("<ul>");
+for(let i=0;i<tomb.length;i++){
+	if(tomb[i]%2==0){
+    	document.write("<li>"+tomb[i]+"</li>");
+    }
+}
+document.write("</ul>");
+
+LNKO
+
+let a=Math.round(Math.random()*1000);
+let b=Math.round(Math.random()*1000);
+let kisebb=a;
+if(b<a){
+	kisebb=b;		
+}
+let lnko=1;
+for(let i=2;i<=kisebb;i++){
+	if(a%i==0 && b%i==0){
+    	lnko=i;
+    }
+}
+document.write(`A ${a} és ${b} LegNagyobb Közös Osztója: ${lnko}`);
+
+MAX érték keresés
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+
+let maxErtek=tomb[0];
+
+for(let i=1;i<tomb.length;i++){
+	if(tomb[i]>maxErtek){
+    	maxErtek=tomb[i];
+    }
+}
+document.write("<br>A tömbben lévő legnagyobb elem értéke: "+maxErtek);
+
+MAX INDEX keresés
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+
+let maxIndex=0;
+
+for(let i=1;i<tomb.length;i++){
+	if(tomb[i]>tomb[maxIndex]){
+    	maxIndex=i;
+    }
+}
+document.write("<br>A tömbben lévő legnagyobb elem indexe: "+maxIndex);
+
+Megszámlálás tétele
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+let parosDb=0;
+for(let i=0;i<tomb.length;i++){
+	if(tomb[i]%2==0){
+    	parosDb++;
+        //parosDb+=1;
+        //parosDb=parosDb+1;
+    }
+}
+document.write("A tömbben lévő páros elemek száma: "+parosDb);
+
+MIN index keresése
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+let minIndex=0;
+
+for(let i=1;i<tomb.length;i++){
+	if(tomb[i]<tomb[minIndex]){
+    	minIndex=i;
+    }
+}
+document.write("A tömbben lévő legkisebb elem indexe: "+minIndex);
+
+
+Összegzés tétele
+
+let tomb=[];
+for(let i=0;i<10;i++){
+	tomb.push(Math.round(Math.random()*100));
+}
+document.write(tomb);
+document.write("<hr>");
+
+let osszeg=0;
+for(let i=0;i<tomb.length;i++){
+	osszeg=osszeg+tomb[i];
+}
+document.write("A tömb elemeinek összege: "+osszeg);
+

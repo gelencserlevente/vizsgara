@@ -1,0 +1,109 @@
+Angular jegyzet
+
+Új projekt létrehozása:
+
+Új mappa: md Ujmappa
+belépés az új mappába: cd./Ujmappa/
+angular verzió: ng v
+App létrehozás: ng new UjProjekt --no-standalone
+új komponens : ng g c Ujkomponens
+routing: app-routing.module.ts -> const routes: Routes = [
+  {path:"databinding", component:DatabindingComponent}
+];
+
+app.component.html-> törlés kivéve <router-outlet>
+
+DATABINDING
+
+FONTOS: app.module.ts-> imports:[+Formsmodule]	
+
+html:<p>databinding minták!</p>
+
+<h3>Interpoláció</h3>
+<p>{{szoveg}}</p>
+
+
+<h3>property binding</h3>
+<a [href]="utvonal"><img [src]="keplink" [alt]="kepAlternativSzovege" [title]="kepCimke" [width]="kepszelesseg"></a>
+
+
+<h3>Event binding</h3>
+<button type="button" (click)="uzenet()">Felugró üzenet</button>
+<button type="button" (click)="troll()">troll</button>
+
+
+<h3>Two way data-binding</h3>
+<label for="aOldal">Az a oldal mérete</label>
+<input type="number" [(ngModel)]="aOldal" id="aOldal">
+"
+<p>A négyzet oldalának mérete: {{aOldal}}</p>
+<p>a négyzet kerülete: {{aOldal*4}}</p>
+<p>a négyzet területe:{{aOldal*aOldal}}</p>
+
+
+
+Ts:export class DatabindingComponent {
+  
+  //interpoláció
+  szoveg:string="Szeretem az Angulart"
+
+
+  //property binding
+  keplink:string="https://en.m.wikipedia.org/wiki/File:W3Schools_logo.svg"
+
+  utvonal:string="https://www.w3schools.com/";
+
+  kepCimke:string="W3Schools weboldal";
+
+  kepAlternativSzovege:string="W3Schools";
+
+  kepszelesseg:number=200;
+
+  kepcel:string="_blank"
+
+
+  //event binding
+  uzenet():void{
+    alert("Hello World")
+  }
+
+  troll():void{
+    this.utvonal="https://en.wikipedia.org/wiki/Trollface"
+  }
+
+  //két irányú adatkötés [(ngModel)] 
+  aOldal:number=1
+}
+
+Unit Teszt
+
+function teszt1(){
+    let tesztelem= document.querySelector("h1").innerHTML;
+
+    if(tesztelem=="DOM gyakorlás"){
+        console.log("sikeres 01. teszt")
+    }
+    else{
+        console.log("sikertelen 01. teszt")
+    }
+}
+teszt1()
+
+DOM négyzet számítás
+
+function szamolas(){
+    let a=document.getElementById("aOldal").value
+    let b=document.getElementById("bOldal").value
+    let kerulet=(a+b)*2
+    let terulet=a*b
+    document.getElementById("kerulet").innerHTML=`a téglalap kerülete: ${kerulet}`
+    document.getElementById("terulet").innerHTML=`a téglalap területe: ${terulet}`
+}
+
+Typescript
+
+function beolvaso():void{
+    let szoveg:string="Szeretem a progit"
+    console.log(szoveg)
+}
+beolvaso()

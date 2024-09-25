@@ -1,0 +1,21 @@
+NODEJS
+
+ALAP SZERVER KÉSZÍTÉS
+const http = require("http");//beépített http modul importálása
+
+const hostname = "127.0.0.1";//IP cím megadása, ebben az esetben a localhost
+
+const port = "3000";//Port meghatározása, amin kommunikálni fogunk
+
+const server = http.createServer((req, res) => { //HTTP modul segítségével szerver készítése "arrowfunction"-nel
+    res.statusCode = 200;//Státuszkód, jelentése: MINDEN RENDBEN
+    res.setHeader("Content-type", "text/plain");//HTTP fejrész megadása, milyen tartalom típus jelenjen meg
+    res.end("Szeretem a NodeJS");//Szöveges tartalom
+});
+
+server.listen(port, hostname, () => {
+    console.log(`A szerverünk fut a http://${hostname}:${port} címen`);//Visszajelző üzenet arról, hogy sikeresen elindítottuk a szervert!
+});
+
+
+FUTTATÁS: node ./fajlnev.js
